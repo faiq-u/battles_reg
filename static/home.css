@@ -1,0 +1,21 @@
+body{
+
+    background-color: rgb(14, 12, 16);
+}
+button{
+    font-size: 24px;
+    background-color:pink ;
+}
+h1{
+    color:rgba(241, 192, 240, 0.795);
+    font-family:fantasy;
+}
+#logo{
+    height:400px;
+    width:100px;
+}
+
+button:hover{
+    background-color: blueviolet;
+    font-size: 25px;
+}

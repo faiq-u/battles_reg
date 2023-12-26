@@ -1,0 +1,20 @@
+{% load static %}
+<link rel='stylesheet' href='{% static "home.css" %}'>
+{% for x in applicants %}
+{% if x.accepted == False %}
+
+Name of applicant{{x.name}}<hr>
+Name of school{{x.school}}<hr>
+photo: <img src="{{ x.photo.url }}" alt="applicant_photos"><hr>
+Games: {% for z in x.games.all %}
+{{z.name}}
+{% endfor %}<hr>
+{{x.email}}<hr>
+<form action='' method='POST'>
+{{accrej.as_p}}
+
+{% csrf_token %} 
+<button name='id' value={{x.id}}>declare</button>
+</form>
+{% endif %}
+{% endfor %}

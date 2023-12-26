@@ -1,0 +1,16 @@
+{% load static %}
+<link rel='stylesheet' href='{% static "home.css" %}'>
+<body>
+<center><h1>BATTLES the Fourth registration</h1></center>
+<hr>
+<center><img src='/media/applicant_photos/logo.png' alt='templates' id='logo'/><center>
+{% csrf_token %}
+<div id='inputs'>
+<form action='reg'>
+    <button>register</button>
+</form>
+<form action='own'>
+    <button>view accepted participants</button>
+</form>
+</div>
+</body>

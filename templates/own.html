@@ -1,0 +1,24 @@
+{% load static %}
+<link rel='stylesheet' href='{% static "own.css" %}'>
+
+<body>
+<form action='' method='POST'>
+{% csrf_token %}
+<input type='text' name='search' placeholder='search by name...' font-size='24px'/><button type='submit' font-size='24px'>search</button>
+</form>
+
+
+
+{% for x in applicants %}
+{% if x.accepted == True %}
+Name of applicant: {{x.name}}<hr>
+Name of school: {{x.school}}<hr>
+Photo: <img src="{{ x.photo.url }}" alt="applicant_photos" id='photo'><hr>
+Games: {% for z in x.games.all %}
+{{z.name}}
+{% endfor %}
+<hr>
+<hr>
+{% endif %}
+{% endfor %}
+</body>
